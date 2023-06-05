@@ -1,17 +1,21 @@
 {
-    "tasks": {
-        "start": "deno run -A --watch=static/,routes/ dev.ts",
-        "typecheck": "deno check ."
-    },
-    "importMap": "./import_map.json",
-    "compilerOptions": {
-        "jsx": "react-jsx",
-        "jsxImportSource": "preact"
-    },
-    "fmt": {
-        "semiColons": false,
-        "indentWidth": 4,
-        "singleQuote": true,
-        "proseWrap": "preserve"
+  "tasks": {
+    "start": "deno run -A --watch=static/,routes/ dev.ts"
+  },
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "fmt": {
+    "semiColons": false,
+    "indentWidth": 4,
+    "singleQuote": true,
+    "proseWrap": "preserve"
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["ban-types"]
     }
+  }
 }

@@ -1,21 +1,23 @@
 {
-  "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
-  },
-  "importMap": "./import_map.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
-  "fmt": {
-    "semiColons": false,
-    "indentWidth": 4,
-    "singleQuote": true,
-    "proseWrap": "preserve"
-  },
-  "lint": {
-    "rules": {
-      "exclude": ["ban-types"]
+    "tasks": {
+        "start": "deno run -A --watch=static/,routes/ dev.ts"
+    },
+    "importMap": "./import_map.json",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact"
+    },
+    "fmt": {
+        "semiColons": false,
+        "indentWidth": 4,
+        "singleQuote": true,
+        "proseWrap": "preserve"
+    },
+    "lint": {
+        "include": ["routes/", "utils/"],
+        "rules": {
+            "include": ["no-unused-vars"],
+            "exclude": ["ban-types"]
+        }
     }
-  }
 }

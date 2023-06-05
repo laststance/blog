@@ -1,46 +1,12 @@
-import type { PageProps } from "$fresh/server.ts";
-import { extract } from "$std/front_matter/any.ts";
-import { join } from "$std/path/mod.ts";
-import type { Handlers } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { getPost, getPosts, Post } from "@/utils/posts.ts";
 
-interface Post {
-  slug: string;
-  title: string;
-  publishedAt: Date;
-  content: string;
-  snippet: string;
-}
-
-export const hander: Handlers<Post[]> = {
+export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
     const posts = await getPosts();
     return ctx.render(posts);
   },
 };
-
-async function getPosts(): Promise<Post[]> {
-  const files = Deno.readDir("./posts");
-  const promises = [];
-  for await (const file of files) {
-    const slug = file.name.replace(".md", "");
-    promises.push(getPost(slug));
-  }
-  const posts = await Promise.all(promises) as Post[];
-  posts.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
-  return posts;
-}
-
-async function getPost(slug: Post["slug"]): Promise<Post | null> {
-  const text = await Deno.readTextFile(join("./posts", `${slug}.md`));
-  const { attrs, body } = extract<Partial<Post>>(text);
-  return {
-    slug,
-    title: attrs.title!,
-    publishedAt: new Date(attrs.publishedAt!),
-    content: body,
-    snippet: attrs.snippet!,
-  };
-}
 
 export default function BlogIndexPage(props: PageProps<Post[]>) {
   const posts = props.data;
@@ -59,15 +25,19 @@ function PostCard(props: { post: Post }) {
   return (
     <div class="py-8 border(t gray-200)">
       <a class="sm:col-span-2" href={`/${post.slug}`}>
-        <h3 class="text(3xl gray-900) font-bold">{post.title}</h3>
+        <h3 class="text(3xl gray-900) font-bold">
+          {post.title}
+        </h3>
         <time class="text-gray-500">
-          {new Date(post.publishedAt).toLocaleString("en-us", {
+          {new Date(post.publishedAt).toLocaleDateString("en-us", {
             year: "numeric",
             month: "long",
             day: "numeric",
           })}
         </time>
-        <div class="mt-4 text-gray-900">{post.snippet}</div>
+        <div class="mt-4 text-gray-900">
+          {post.snippet}
+        </div>
       </a>
     </div>
   );

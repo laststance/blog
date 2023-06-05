@@ -9,8 +9,8 @@ export const handler: Handlers<Post[]> = {
         const origin = url.origin
         const copyright = `Copyright ${new Date().getFullYear()} ${origin}`
         const feed = new Feed({
-            title: 'Blog',
-            description: 'This is a Fresh Blog',
+            title: 'Laststance Blog',
+            description: 'Laststance Blog',
             id: `${origin}/blog`,
             link: `${origin}/blog`,
             language: 'en',

@@ -1,15 +1,9 @@
 ---
-title: This is my first blog post!
-published_at: 2022-11-04T15:00:00.000Z
-snippet: This is an excerpt of my first blog post.
+title: Laststance first blog Post
+published_at: 2023-06-04T22:46:36.747Z
+snippet: Explain what I write on this blog.
 ---
 
-Hello, world!
+Laststance.io was originally a place to put repositories that I wanted to publish as a product because it was difficult to organize the primary repository list of my personal account.  
 
-# This is h1
-
-## This is h2
-
-_underline_
-
-**bold**
+Currently, there is only one package that [eslint-config-ts-prefixer](https://github.com/laststance/eslint-config-ts-prefixer) has been released, but I would like to write about releases of new products and notional changes of existing products in the future.

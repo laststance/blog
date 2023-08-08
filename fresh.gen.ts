@@ -8,14 +8,14 @@ import * as $2 from './routes/feed.ts'
 import * as $3 from './routes/index.tsx'
 
 const manifest = {
-    routes: {
-        './routes/[slug].tsx': $0,
-        './routes/_404.tsx': $1,
-        './routes/feed.ts': $2,
-        './routes/index.tsx': $3,
-    },
-    islands: {},
-    baseUrl: import.meta.url,
+  routes: {
+    './routes/[slug].tsx': $0,
+    './routes/_404.tsx': $1,
+    './routes/feed.ts': $2,
+    './routes/index.tsx': $3,
+  },
+  islands: {},
+  baseUrl: import.meta.url,
 }
 
 export default manifest

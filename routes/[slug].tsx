@@ -31,7 +31,7 @@ export default function PostPage(props: PageProps<Post>) {
           })}
         </time>
         <div
-          class='mt-8 markdown-body'
+          class='mt-8 my-prose'
           dangerouslySetInnerHTML={{ __html: render(post.content) }}
         />
       </main>

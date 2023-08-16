@@ -12,9 +12,7 @@ import twindConfig from './twind.config.ts'
 import twindPlugin from '$fresh/plugins/twind.ts'
 const myTwindConfig = {
   plugins: {
-    ...typography({
-      className: 'my-prose', // Defaults to 'prose'
-    }),
+    ...typography(),
   },
 }
 

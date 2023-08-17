@@ -4,7 +4,7 @@ published_at: 2023-08-17T09:16:37Z
 snippet: Further update async/await/Promise rules
 ---
 
-I've published [eslint-config-ts-prefixer@v0.23.3](https://github.com/laststance/eslint-config-ts-prefixer).  
+I've published [eslint-config-ts-prefixer@v0.23.3](https://github.com/laststance/eslint-config-ts-prefixer).
 
 eslint-config-ts-prefixer is ESLint rule set that integrated prettier as one of ESLint rule and specialized fixable rule set.
 And
@@ -13,16 +13,15 @@ And
 - 💅 [Prettier](https://prettier.io/) integration, specialized fixable `import` rules.
 - ✅ Meamingful rules code behavior.
 
-I added these new rules this update.  
-One of my favorite rule is `@typescript-eslint/promise-function-async`.  
+I added these new rules this update.\
+One of my favorite rule is `@typescript-eslint/promise-function-async`.\
 This is available `--fix` so auto adding `async` keyword property position.
-
 
 ### 1. [@typescript-eslint/no-misused-new](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-misused-new.md)
 
 This rule enforces that constructors within classes are marked with the `new` keyword.
 
-```typescript
+```javacript
 // Bad
 interface Foo {
   new (): Foo;
@@ -38,7 +37,7 @@ class Foo {
 
 This rule avoids using promises in places not designed to handle them.
 
-```typescript
+```javacript
 // Bad
 addEventListener('click', async () => {
   await doSomethingAsync();
@@ -54,7 +53,7 @@ addEventListener('click', () => {
 
 This rule requires any function or method that returns a Promise to be marked async.
 
-```typescript
+```javacript
 // Bad
 function foo(): Promise<void> {
   return Promise.resolve();
@@ -73,15 +72,15 @@ This rule disallows `await` inside of loops.
 ```javascript
 // Bad
 for (let i = 0; i < 10; i++) {
-  await asyncFunction();
+  await asyncFunction()
 }
 
 // Good
-const promises = [];
+const promises = []
 for (let i = 0; i < 10; i++) {
-  promises.push(asyncFunction());
+  promises.push(asyncFunction())
 }
-await Promise.all(promises);
+await Promise.all(promises)
 ```
 
 ### 5. [no-return-await](https://eslint.org/docs/rules/no-return-await)
@@ -91,12 +90,12 @@ This rule disallows unnecessary `return await`.
 ```javascript
 // Bad
 async function foo() {
-  return await bar();
+  return await bar()
 }
 
 // Good
 async function foo() {
-  return bar();
+  return bar()
 }
 ```
 
@@ -106,10 +105,10 @@ This rule requires using Error objects as Promise rejection reasons.
 
 ```javascript
 // Bad
-Promise.reject('something went wrong');
+Promise.reject('something went wrong')
 
 // Good
-Promise.reject(new Error('something went wrong'));
+Promise.reject(new Error('something went wrong'))
 ```
 
 ### 7. [require-atomic-updates](https://eslint.org/docs/rules/require-atomic-updates)
@@ -119,18 +118,18 @@ This rule disallows assignments that can lead to race conditions due to usage of
 ```javascript
 // Bad
 async function foo() {
-  c = a + b;
-  await somethingAsync();
-  c = c + 1; // This might be an outdated value of c
+  c = a + b
+  await somethingAsync()
+  c = c + 1 // This might be an outdated value of c
 }
 
 // Good
 async function foo() {
-  const temp = a + b;
-  await somethingAsync();
-  c = temp + 1;
+  const temp = a + b
+  await somethingAsync()
+  c = temp + 1
 }
 ```
 
-Thnak you for all yours.  
+Thnak you for all yours.\
 Really wellcome ESLint & TS setting improvement feedback!

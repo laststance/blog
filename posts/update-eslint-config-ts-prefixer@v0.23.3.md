@@ -1,5 +1,5 @@
 ---
-title: Update update-eslint-config-ts-prefixer@v0.23.3
+title: Update eslint-config-ts-prefixer@v0.23.3
 published_at: 2023-08-17T09:16:37Z
 snippet: Further update async/await/Promise rules
 ---

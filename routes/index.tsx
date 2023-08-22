@@ -1,5 +1,6 @@
 import { Head } from '$fresh/runtime.ts'
 import { Handlers, PageProps } from '$fresh/server.ts'
+import { Footer } from '../components/Footer.tsx'
 import { getPosts, Post } from '../utils/posts.ts'
 
 export const handler: Handlers<Post[]> = {
@@ -25,6 +26,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
         <div class='mt-8'>
           {posts.map((post) => <PostCard post={post} />)}
         </div>
+        <Footer />
       </main>
     </>
   )

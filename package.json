@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "gen": "node scripts/gen.js"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0"
+  },
+  "volta": {
+    "node": "18.17.1"
+  }
+}

@@ -36,5 +36,9 @@ error: Uncaught Error: Not implemented: net.Socket.prototype.constructor with fd
 
 [![](https://img.shields.io/badge/Formatted%20by-https%3A%2F%2Fst.elmah.io-%230da58e)](https://st.elmah.io)
 
+
 In the end, I created a `package.json` file, installed `@clack/prompts` using `pnpm`, and wrote a script in Node to generate the blog template for Deno Fresh.\
 The result was a rather chaotic arrangement of project files.
+
+
+![Screenshot 2023-09-10 at 2 53 14](https://github.com/laststance/blog/assets/5501268/d0234b56-efe0-4ffe-9068-e502b61b9cf9)

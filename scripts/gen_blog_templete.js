@@ -30,8 +30,7 @@ const published_at = () => {
   return localISOTime
 }
 
-const template = `
----
+const template = `---
 title: ${title}
 published_at: ${published_at()}
 snippet: ${snippet}
@@ -44,7 +43,9 @@ const filename = ((title) => {
   return words.join('-')
 })(title)
 
-const filePath = `./posts/${trim(filename)}.md`
+
+
+const filePath = `./posts/${trim(filename.replace(/[^\w |?!]/g, ''))}.md`
 
 const s = spinner()
 s.start('processing...')

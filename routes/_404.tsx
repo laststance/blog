@@ -1,9 +1,8 @@
-import type { FunctionComponent } from 'preact'
 import { PageProps } from '$fresh/server.ts'
 import { Post } from '../utils/posts.ts'
 
 export default function Blog404Page(
-  props: PageProps<Post[]>,
+  _props: PageProps<Post[]>,
 ) {
   return (
     <main class='max-w-screen-md px-4 pt-16 mx-auto'>

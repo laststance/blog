@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "gen": "node scripts/gen.js"
+    "gen": "node scripts/gen_blog_templete.js"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0"

@@ -25,8 +25,7 @@ const published_at = () => {
   const date = new Date()
   const options = { timeZone: 'Asia/Tokyo', hour12: false }
 
-  const localISOTime = new Date(date.toLocaleString('en-US', options))
-    .toISOString()
+  const localISOTime = new Date(date.toLocaleString(options)).toISOString()
   return localISOTime
 }
 
@@ -39,13 +38,11 @@ snippet: ${snippet}
 
 const filename = ((title) => {
   const words = title.split(' ')
-  if (words.length === 1) return words
+  if (words.length === 1 && Array.isArray(words)) return words[0]
   return words.join('-')
 })(title)
-
-
-
-const filePath = `./posts/${trim(filename.replace(/[^\w |?!]/g, ''))}.md`
+console.log(filename)
+const filePath = `./posts/${filename.replace(/[^\w |?!]/g, '')}.md`
 
 const s = spinner()
 s.start('processing...')

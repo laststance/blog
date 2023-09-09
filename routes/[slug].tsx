@@ -22,7 +22,7 @@ export default function PostPage(props: PageProps<Post>) {
       <Head>
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
-      <main class='max-w-screen-md px-4 pt-16 mx-auto'>
+      <main class='flex-1 max-w-screen-md px-4 pt-16 mx-auto'>
         <h1 class='text-5xl font-bold'>{post.title}</h1>
         <time class='pt-2 inline-block text-gray-500'>
           {new Date(post.publishedAt).toLocaleDateString('en-us', {
@@ -35,8 +35,8 @@ export default function PostPage(props: PageProps<Post>) {
           class='mt-8 markdown-body'
           dangerouslySetInnerHTML={{ __html: render(post.content) }}
         />
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }

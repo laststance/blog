@@ -8,7 +8,7 @@ export default function App({ Component }: AppProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <title>blog</title>
       </head>
-      <body>
+      <body class="flex flex-col min-h-screen">
         <Component />
       </body>
     </html>
